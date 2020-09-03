@@ -1,9 +1,13 @@
 import React from 'react'
 
-import { InputMask } from 'react-mask'
+import { InputMask } from 'react-masked'
 
 const App = () => {
-  return <InputMask mask="999.999.999-99" clearIfNotMatch />
+  return (
+    <div>
+      <InputMask mask="999.999.999-99" clearIfNotMatch />
+    </div>
+  )
 }
 
 export default App

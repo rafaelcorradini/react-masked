@@ -1,10 +1,20 @@
 {
-  "name": "react-mask",
-  "version": "1.0.0",
+  "name": "react-masked",
+  "version": "0.1.0",
   "description": "Input and text mask for React",
-  "author": "",
   "license": "MIT",
-  "repository": "/react-mask",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaelcorradini/react-mask"
+  },
+  "homepage": "https://github.com/rafaelcorradini/react-mask",
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript",
+    "mask",
+    "input"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",

@@ -1,15 +1,15 @@
-# react-mask
+# react-masked
 
 > Input and text mask for React
 
-[![NPM](https://img.shields.io/npm/v/react-mask.svg)](https://www.npmjs.com/package/react-mask) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rafaelcorradini/react-mask/master/LICENSE)
-[![Build Status](https://travis-ci.com/rafaelcorradini/react-mask.svg?branch=master)](https://travis-ci.com/rafaelcorradini/react-mask)
+[![NPM](https://img.shields.io/npm/v/react-masked.svg)](https://www.npmjs.com/package/react-masked) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rafaelcorradini/react-masked/master/LICENSE)
+[![Build Status](https://travis-ci.com/rafaelcorradini/react-masked.svg?branch=master)](https://travis-ci.com/rafaelcorradini/react-masked)
 
 ## Install
 
 ```bash
-npm install --save react-mask
+npm install --save react-masked
 ```
 
 ## Usage
@@ -17,6 +17,7 @@ npm install --save react-mask
 
 ### mask prop
 ```jsx
+import { InputMask } from 'react-masked'
 <InputMask mask="999.999.999-99" />
 ```
 
@@ -34,25 +35,12 @@ If clearIfNotMatch is true the input will be cleared if the value not match with
 fitToMask('12332112312', '999.999.999-99') // returns '123.321.123-12'
 ```
 
-#### example with add patterns
-```html
-<p>{{ 'asd-123' | simpleMask:'aaa-II':{'I': '[0-9]' } }}<p>
-```
-output:
-```html
-<p>123.321.123-12</p>
+#### example with custom patterns
+```javascript
+fitToMask('12332112312', 'aaa.aaa.aaa-aa', { a: new RegExp('[0-9]') }) // returns '123.321.123-12'
 ```
 
-#### example with new patterns(ignoring old patterns)
-```html
-<p>{{ '123-bddd' | simpleMask:'III-aaa':{'I': '[0-9]' }:true }}<p>
-```
-output:
-```html
-<p>123-aaa</p>
-```
-
-## <a name="3"></a>Patterns
+## Patterns
 ### Default patterns:
 
 ```typescript

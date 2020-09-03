@@ -4,12 +4,13 @@ node_js:
 cache:
   directories:
     - node_modules
+before_install:
+  - npm ci
 script:
   - npm run test
 deploy:
-  provider: surge
-  skip_cleanup: true
-  domain: <my_name_here>.surge.sh
-  project: ./build/
+  provider: npm
+  email: "YOUR_EMAIL_ADDRESS"
+  api_key: "YOUR_AUTH_TOKEN"
 on:
   branch: master
