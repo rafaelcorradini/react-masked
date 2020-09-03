@@ -5,9 +5,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rafaelcorradini/react-mask"
+    "url": "https://github.com/rafaelcorradini/react-masked"
   },
-  "homepage": "https://github.com/rafaelcorradini/react-mask",
+  "homepage": "https://github.com/rafaelcorradini/react-masked",
   "keywords": [
     "react",
     "javascript",
