@@ -18,13 +18,17 @@ npm install --save react-masked
 ### mask prop
 ```jsx
 import { InputMask } from 'react-masked'
+
 <InputMask mask="999.999.999-99" />
 ```
 
 ### clearIfNotMatch prop
 
 If clearIfNotMatch is true the input will be cleared if the value not match with the mask
+
 ```jsx
+import { InputMask } from 'react-masked'
+
 <InputMask mask="999.999.999-99" clearIfNotMatch />
 ```
 
@@ -32,11 +36,15 @@ If clearIfNotMatch is true the input will be cleared if the value not match with
 
 #### example
 ```javascript
+import { fitToMask } from 'react-masked'
+
 fitToMask('12332112312', '999.999.999-99') // returns '123.321.123-12'
 ```
 
 #### example with custom patterns
 ```javascript
+import { fitToMask } from 'react-masked'
+
 fitToMask('12332112312', 'aaa.aaa.aaa-aa', { a: new RegExp('[0-9]') }) // returns '123.321.123-12'
 ```
 

@@ -8,9 +8,13 @@ before_install:
   - npm ci
 script:
   - npm run test
+branches:
+  only:
+    - master
+before_deploy:
+  - npm run test
 deploy:
   provider: npm
-  email: "YOUR_EMAIL_ADDRESS"
-  api_key: "YOUR_AUTH_TOKEN"
-on:
-  branch: master
+  on:
+    tags: true
+
