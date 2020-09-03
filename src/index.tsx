@@ -1,10 +1,4 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+import InputMask from './components/InputMask'
 
-interface Props {
-  text: string
-}
-
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export { fitToMask, isMatchingMask } from './common/mask'
+export { InputMask }

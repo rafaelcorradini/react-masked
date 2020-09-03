@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-mask'
-import 'react-mask/dist/index.css'
+import { InputMask } from 'react-mask'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <InputMask mask="999.999.999-99" clearIfNotMatch />
 }
 
 export default App

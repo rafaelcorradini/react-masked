@@ -1,4 +1,15 @@
 language: node_js
 node_js:
-  - 12
-  - 10
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run test
+deploy:
+  provider: surge
+  skip_cleanup: true
+  domain: <my_name_here>.surge.sh
+  project: ./build/
+on:
+  branch: master
