@@ -1,4 +1,4 @@
-import { isMatchingMask, fitToMask, isPattern } from './mask'
+import { isMatchingMask, fitToMask, isPattern, fitToCurrency } from './mask'
 
 it('should indetify a pattern', () => {
   const patterns = {
@@ -34,4 +34,21 @@ it('should fit the value in a mask using default patterns', () => {
 it('should verify if the value is matching the full mask', () => {
   expect(isMatchingMask('1234', '9999')).toBe(true)
   expect(isMatchingMask('12', '9999')).toBe(false)
+})
+
+it('should fit the value in a currency format', () => {
+  expect(fitToCurrency('1234', 2, ',')).toBe('12,34')
+  expect(fitToCurrency('1234', 3, ',')).toBe('1,234')
+  expect(fitToCurrency('100000', 2, '.')).toBe('1000.00')
+  expect(fitToCurrency('100000', 2, '.', ',')).toBe('1,000.00')
+  expect(fitToCurrency('100000', 2, '.', ',', 'R$')).toBe('R$ 1,000.00')
+  expect(fitToCurrency('100000', 2, '.', ',', 'R$', 'BRL')).toBe(
+    'R$ 1,000.00 BRL'
+  )
+  expect(fitToCurrency('120000', 2, '.', ',', 'R$', 'BRL', 1000)).toBe(
+    'R$ 1,000.00 BRL'
+  )
+  expect(fitToCurrency('5000', 2, '.', ',', 'R$', 'BRL', undefined, 1000)).toBe(
+    'R$ 1,000.00 BRL'
+  )
 })

@@ -1,7 +1,7 @@
 import React from 'react'
-import '../setupEnzyme'
+import '../../setupEnzyme'
 import { mount } from 'enzyme'
-import { InputMask } from '..'
+import InputMask from './InputMask'
 
 it('should render component', () => {
   const wrapper = mount(<InputMask mask='999.999.999-99' />)

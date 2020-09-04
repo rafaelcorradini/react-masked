@@ -29,7 +29,7 @@ export function fitToMask(
 ): string {
   let newValue = ''
   // value size adjust to mask size
-  const size = mask.replace(/\\(?!\\)/g, '').length
+  const size: number = getMaskSize(mask)
   value = value.substring(0, size)
 
   for (let i = 0, j = 0; j < mask.length && i < value.length; i++, j++) {
@@ -64,8 +64,62 @@ export function fitToMask(
  */
 export function isMatchingMask(value: string, mask: string): boolean {
   // value size adjust to mask size
-  const size = mask.replace(/\\(?!\\)/g, '').length
+  const size: number = getMaskSize(mask)
   value = value.substring(0, size)
 
   return value.length === size
+}
+
+/**
+ * Fits the value with the currency mask
+ * @param value value to fit
+ * @param precision decimal precision
+ * @param decimal decimal separator
+ * @param thousand thousands separator
+ * @param prefix string to show on value start
+ * @param suffix string to show on value end
+ * @returns true if match, false if not match
+ */
+export function fitToCurrency(
+  value: string,
+  precision: number,
+  decimal: string,
+  thousand?: string,
+  prefix?: string,
+  suffix?: string,
+  max?: number,
+  min?: number
+): string {
+  const number: string = Number(value.replace(/[^0-9]/g, '')).toString()
+  let realNumber: number
+  let newValue = ''
+
+  realNumber = Number(number) / 10 ** precision
+
+  if (max !== undefined && realNumber > max) realNumber = max
+  if (min !== undefined && realNumber < min) realNumber = min
+
+  newValue = realNumber.toLocaleString('en', {
+    minimumFractionDigits: precision,
+    maximumFractionDigits: precision
+  })
+
+  newValue = newValue
+    .replace('.', 'X')
+    .replace(/,/g, thousand || '')
+    .replace('X', decimal)
+
+  if (prefix) {
+    newValue = `${prefix} ${newValue}`
+  }
+
+  if (suffix) {
+    newValue = `${newValue} ${suffix}`
+  }
+
+  return newValue
+}
+
+function getMaskSize(mask: string): number {
+  return mask.replace(/\\(?!\\)/g, '').length
 }

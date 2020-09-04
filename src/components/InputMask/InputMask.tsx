@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useCallback, forwardRef } from 'react'
-import { defaultPatterns } from '../common/defaultPatterns'
-import { fitToMask, isMatchingMask } from '../common/mask'
+import { defaultPatterns } from '../../common/defaultPatterns'
+import { fitToMask, isMatchingMask } from '../../common/mask'
 
 interface Props {
   mask: string
@@ -39,6 +39,7 @@ const InputMask: React.ForwardRefRenderFunction<HTMLInputElement, Props> = (
     },
     [mask, patterns, addPatterns, onChange]
   )
+
   /**
    * onBlur callback
    * when clearIfNotMatch is true will check if the mask is matching, otherwise the value will cleared
