@@ -1,6 +1,6 @@
 {
   "name": "react-masked",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Input and text mask for React",
   "license": "MIT",
   "repository": {
@@ -30,6 +30,7 @@
     "test:lint": "eslint --ext .tsx,.ts src",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:coverage": "cross-env CI=1 react-scripts test --env=jsdom --coverage",
+    "coveralls": "cross-env CI=1 react-scripts test --env=jsdom --coverage && cat ./coverage/lcov.info | coveralls",
     "test:watch": "react-scripts test --env=jsdom --coverage",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
@@ -55,6 +56,7 @@
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
+    "coveralls": "^3.1.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",

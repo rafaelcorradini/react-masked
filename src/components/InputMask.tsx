@@ -37,7 +37,7 @@ const InputMask: React.ForwardRefRenderFunction<HTMLInputElement, Props> = (
       })
       if (onChange) onChange(event)
     },
-    [mask, patterns, addPatterns, clearIfNotMatch, onChange]
+    [mask, patterns, addPatterns, onChange]
   )
   /**
    * onBlur callback
