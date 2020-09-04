@@ -13,8 +13,3 @@ branches:
     - master
 before_deploy:
   - npm run test
-deploy:
-  provider: npm
-  on:
-    tags: true
-
