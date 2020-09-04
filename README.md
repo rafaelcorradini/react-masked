@@ -13,7 +13,7 @@
 npm install --save react-masked
 ```
 
-## Usage
+## InputMask
 
 
 ### mask prop
@@ -32,24 +32,6 @@ import { InputMask } from 'react-masked'
 
 <InputMask mask="999.999.999-99" clearIfNotMatch />
 ```
-
-### Using functions to format strings
-
-#### example
-```javascript
-import { fitToMask } from 'react-masked'
-
-fitToMask('12332112312', '999.999.999-99') // returns '123.321.123-12'
-```
-
-#### example with custom patterns
-```javascript
-import { fitToMask } from 'react-masked'
-
-fitToMask('12332112312', 'aaa.aaa.aaa-aa', { a: new RegExp('[0-9]') }) // returns '123.321.123-12'
-```
-
-## Patterns
 ### Default patterns:
 
 ```typescript
@@ -96,6 +78,39 @@ The patterns will be overwritten
 <InputMask mask='aaa.aaa.aaa-aa99' addPatterns={{ a: new RegExp('[0-9]') }} />
 ```
 example of input: 123.123.123-1199
+
+## InputCurrency
+
+### Example
+
+```jsx
+import { InputCurrency } from 'react-masked'
+
+<InputCurrency
+  precision={4}
+  thousand="."
+  decimal=","
+  prefix="R$"
+  suffix="BRL"
+/>
+```
+the numbers will be formatted like: R$ 1.000,00 BRL
+
+## Functions to format strings
+
+#### example
+```javascript
+import { fitToMask } from 'react-masked'
+
+fitToMask('12332112312', '999.999.999-99') // returns '123.321.123-12'
+```
+
+#### example with custom patterns
+```javascript
+import { fitToMask } from 'react-masked'
+
+fitToMask('12332112312', 'aaa.aaa.aaa-aa', { a: new RegExp('[0-9]') }) // returns '123.321.123-12'
+```
 
 
 ## License
