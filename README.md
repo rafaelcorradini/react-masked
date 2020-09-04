@@ -5,6 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/react-masked.svg)](https://www.npmjs.com/package/react-masked)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rafaelcorradini/react-masked/master/LICENSE)
 [![Build Status](https://travis-ci.com/rafaelcorradini/react-masked.svg?branch=master)](https://travis-ci.com/rafaelcorradini/react-masked)
+[![Coverage Status](https://coveralls.io/repos/github/rafaelcorradini/react-masked/badge.svg?branch=master)](https://coveralls.io/github/rafaelcorradini/react-masked?branch=master)
 
 ## Install
 
