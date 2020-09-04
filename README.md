@@ -82,11 +82,11 @@ patterns = {
 
 ### Set new patterns
 
-This add a new pattern, the patterns will not be overwritten
+This add a new pattern, the patterns wont be overwritten
 ```jsx
 <InputMask mask='999.999.999-aa' patterns={{ a: new RegExp('[0-9]') }} />
 ```
-example of input: abc123
+example of input: 123.123.123-1122
 
 ### Add patterns
 
@@ -94,7 +94,7 @@ The patterns will be overwritten
 ```jsx
 <InputMask mask='aaa.aaa.aaa-aa99' addPatterns={{ a: new RegExp('[0-9]') }} />
 ```
-example of input: +abc123
+example of input: 123.123.123-1199
 
 
 ## License
