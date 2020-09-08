@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useCallback, forwardRef } from 'react'
 import { fitToCurrency } from '../../common/mask'
 
-interface Props {
+interface Props extends React.ComponentPropsWithoutRef<'input'> {
   onChange?: React.EventHandler<React.ChangeEvent>
   children?: React.ReactNode
   onBlur?: React.EventHandler<React.ChangeEvent>

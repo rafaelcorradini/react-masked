@@ -3,13 +3,12 @@ import { useCallback, forwardRef } from 'react'
 import { defaultPatterns } from '../../common/defaultPatterns'
 import { fitToMask, isMatchingMask } from '../../common/mask'
 
-interface Props {
+interface Props extends React.ComponentPropsWithoutRef<'input'> {
   mask: string
   clearIfNotMatch?: boolean
   patterns?: any
   addPatterns?: any
   onChange?: React.EventHandler<React.ChangeEvent>
-  children?: React.ReactNode
   onBlur?: React.EventHandler<React.ChangeEvent>
 }
 
